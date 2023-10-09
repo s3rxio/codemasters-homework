@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 1</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <form action="/submit" method="POST" class="form">
+      <h2 class="form__title">Крутая форма В)</h2>
+
+      <div class="control">
+        <label for="name" class="control__label">Имя</label>
+        <input
+          type="text"
+          class="control__input"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="control">
+        <label for="email" class="control__label">Email</label>
+        <input
+          type="email"
+          class="control__input"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="control">
+        <label for="file" class="control__label">Прикрепить файл</label>
+        <input type="file" class="control__input" id="file" name="file" />
+      </div>
+
+      <div class="control">
+        <label for="password" class="control__label">Пароль</label>
+        <input
+          type="password"
+          class="control__input"
+          id="password"
+          name="password"
+          minlength="6"
+        />
+      </div>
+
+      <div class="control">
+        <label class="control__label">Пол</label>
+
+        <div class="form__radio-group">
+          <div class="control control_type_radio">
+            <input
+              type="radio"
+              class="control__input_type_radio"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <label for="male" class="control__label">Мужской</label>
+          </div>
+
+          <div class="control control_type_radio">
+            <input
+              type="radio"
+              class="control__input_type_radio"
+              id="female"
+              name="gender"
+              value="female"
+            />
+            <label for="female" class="control__label">Женский</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label>Интересы</label>
+        <div class="form__radio-group">
+          <div class="control control_type_radio">
+            <input
+              type="checkbox"
+              class="control__input_type_radio"
+              id="sports"
+              name="interests"
+              value="sports"
+            />
+            <label for="sports" class="control__label">Спорт</label>
+          </div>
+
+          <div class="control control_type_radio">
+            <input
+              type="checkbox"
+              class="control__input_type_radio"
+              id="music"
+              name="interests"
+              value="music"
+            />
+            <label for="music" class="control__label">Музыка</label>
+          </div>
+
+          <div class="control control_type_radio">
+            <input
+              type="checkbox"
+              class="control__input_type_radio"
+              id="movies"
+              name="interests"
+              value="movies"
+            />
+            <label for="movies" class="control__label">Фильмы</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="country" class="control__label">Страна</label>
+        <select class="select" id="country" name="country">
+          <option value="usa">США</option>
+          <option value="canada">Канада</option>
+          <option value="uk">Великобритания</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label for="video">Видео</label>
+        <video id="video" controls>
+          <source
+            src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+            type="video/mp4"
+          />
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+
+      <div class="control">
+        <label for="audio">Аудио</label>
+        <audio id="audio" controls>
+          <source
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+            type="audio/mpeg"
+          />
+          Ваш браузер не поддерживает аудио.
+        </audio>
+      </div>
+
+      <button type="submit" class="button">
+        <i class="fa-regular fa-paper-plane"></i> Отправить
+      </button>
+    </form>
+  </body>
+</html>
