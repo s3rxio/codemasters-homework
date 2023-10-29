@@ -1,0 +1,36 @@
+.button {
+  --button-background: transparent;
+  --button-color: var(--text-secondary);
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: var(--space-2);
+
+  text-decoration: none;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.button_size_small {
+  padding: var(--space-2);
+}
+
+.button_size_medium {
+  padding: var(--space-3);
+}
+
+.button_size_large {
+  padding: var(--space-3) var(--space-4);
+}
+
+.button_variant_text {
+  color: var(--button-color);
+  background-color: var(--button-background);
+}
+
+.button_variant_text:hover,
+.button_variant_text:focus,
+.button_variant_text:active {
+  --button-background: var(--border-color);
+}

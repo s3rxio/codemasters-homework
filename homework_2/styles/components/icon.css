@@ -1,0 +1,27 @@
+.icon {
+  display: inline-block;
+
+  width: var(--icon-size, 1rem);
+  height: var(--icon-size, 1rem);
+
+  mask-position: center;
+  mask-repeat: no-repeat;
+
+  background-color: currentColor;
+}
+
+.icon_variant_theme-os-default {
+  mask-image: url("/assets/theme-os-default.svg");
+}
+
+.icon_variant_search {
+  mask-image: url("/assets/search.svg");
+}
+
+.icon_variant_cancel {
+  mask-image: url("/assets/cancel.svg");
+}
+
+.icon_variant_language {
+  mask-image: url("/assets/language.svg");
+}

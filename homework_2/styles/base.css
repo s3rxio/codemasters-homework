@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;500&display=swap");
+@import url("./components/banner.css");
+@import url("./components/header.css");
+@import url("./components/button.css");
+@import url("./components/icon.css");
+@import url("./components/input.css");
+@import url("./components/breadcrumb-navigation.css");
+@import url("./components/breadcrumb.css");
+@import url("./components/sidebar.css");
+@import url("./components/article.css");
+@import url("./components/toc.css");
 
 *,
 *::before,
@@ -10,11 +20,17 @@
 }
 
 :root {
-  --background: #1b1b1b;
-  --text: white;
+  --background-primary: #1b1b1b;
+  --background-secondary: #343434;
 
+  --border-color: #858585;
+  --accent-color: #ff2a5130;
+
+  --text-primary: white;
+  --text-secondary: #cdcdcd;
   --text-link: #8cb4ff;
-  --code-background: #343434;
+
+  --code-background: var(--background-secondary);
 
   --font-normal: "Roboto", sans-serif;
   --font-mono: "Roboto Mono", monospace;
@@ -41,8 +57,8 @@ body {
   font-weight: var(--font-regular);
   font-family: var(--font-normal);
 
-  background-color: var(--background);
-  color: var(--text);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
 }
 
 a {
@@ -73,42 +89,26 @@ dd {
   margin: 0 0 var(--space-5) var(--space-4);
 }
 
-.article__container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-
+.container {
+  max-width: 1400px;
   width: 100%;
-  max-width: 768px;
 
   margin: 0 auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
 }
 
-.article__section {
-  display: flex;
-  flex-direction: column;
+.underline {
+  display: inline-block;
+  background-color: var(--text-link);
 
-  gap: var(--space-5);
-  padding: var(--space-2) 0 var(--space-5) 0;
+  width: 1rem;
+  height: 0.125rem;
 }
 
-.article__title {
-  font-size: var(--text-3);
-  font-weight: var(--font-medium);
+.main {
+  display: grid;
 
-  margin: var(--space-5) 0;
-}
-
-.article__section__title {
-  font-size: var(--text-2);
-  font-weight: var(--font-medium);
-
-  margin-top: var(--space-2);
-  margin-bottom: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .article__container {
-    padding: 0 var(--space-4);
-  }
+  grid-template-areas: "sidebar article toc";
+  grid-template-columns: 1fr 2fr 15rem;
 }
