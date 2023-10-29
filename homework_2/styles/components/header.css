@@ -1,5 +1,5 @@
 .header {
-  position: sticky;
+  position: sticky; /* Мы не можем задавать внешнюю геометрию блоку*/
   top: 0;
 
   background-color: var(--background-primary);

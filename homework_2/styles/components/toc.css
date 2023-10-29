@@ -1,5 +1,5 @@
 .toc {
-  position: sticky;
+  position: sticky; /* Мы не можем задавать внешнюю геометрию блоку*/
 
   display: flex;
   flex-direction: column;

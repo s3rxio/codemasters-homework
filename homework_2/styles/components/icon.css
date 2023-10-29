@@ -1,7 +1,7 @@
 .icon {
   display: inline-block;
 
-  width: var(--icon-size, 1rem);
+  width: var(--icon-size, 1rem);  /* Мы не можем задавать внешнюю геометрию блоку*/
   height: var(--icon-size, 1rem);
 
   mask-position: center;

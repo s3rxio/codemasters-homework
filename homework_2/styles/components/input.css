@@ -1,7 +1,7 @@
 .input {
   --input-padding: var(--space-3);
 
-  position: relative;
+  position: relative; /* Мы не можем задавать внешнюю геометрию блоку*/
 
   display: inline-flex;
   align-items: center;
