@@ -1,25 +1,25 @@
 .input {
-  --input-padding: var(--space-3);
+  --input-padding: var(--space-md);
+}
 
-  position: relative;
-
+.input__container {
   display: inline-flex;
   align-items: center;
-  
-  max-width: 5rem;
+
+  position: relative;
 }
 
 .input__input {
   border: 1px solid var(--border-color);
   border-radius: 9999px;
-  
+
   background-color: var(--background-primary);
   color: var(--text-primary);
-  
+
   flex: 1 1;
   outline: none;
 
-  width: 100%;
+  width: 5rem;
   padding: var(--input-padding);
 }
 
@@ -44,11 +44,14 @@
   pointer-events: all;
 }
 
-.input_variant_search > .input__buttons > .underline {
-  margin-top: var(--space-4);
-  margin-left: var(--space-3);
+.input_variant_search__underline {
+  width: 1rem;
+  
+  margin-top: var(--space-lg);
+  margin-left: var(--space-md);
 }
 
-.input:focus {
-  max-width: none;
+.input__input:focus {
+  width: unset;
+  border-color: #ff97a0;
 }

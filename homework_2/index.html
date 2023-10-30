@@ -20,7 +20,7 @@
         <a href="#">AI Help</a> now!
       </p>
     </div>
-    <header class="header">
+    <header class="header header_sticky">
       <div class="container header__container">
         <div class="header__logo">
           <svg
@@ -48,59 +48,76 @@
 
         <div class="header__navigation">
           <div class="header__menu">
-            <a
-              href="#"
-              class="header__menu__item button button_variant_text button_size_medium"
-            >
-              References
+            <a href="#" class="header__menu__item">
+              <span
+                class="button button_variant_text button_size_medium header__button"
+              >
+                References
+              </span>
             </a>
-            <a
-              href="#"
-              class="header__menu__item button button_variant_text button_size_medium"
-            >
-              Guides
+            <a href="#" class="header__menu__item">
+              <span
+                class="button button_variant_text button_size_medium header__button"
+              >
+                Guides
+              </span>
             </a>
-            <a
-              href="#"
-              class="header__menu__item button button_variant_text button_size_medium"
-            >
-              Plus
+            <a href="#" class="header__menu__item">
+              <span
+                class="button button_variant_text button_size_medium header__button"
+              >
+                Plus
+              </span>
             </a>
-            <a
-              href="#"
-              class="header__menu__item button button_variant_text button_size_medium"
-            >
-              Blog
+            <a href="#" class="header__menu__item">
+              <span
+                class="button button_variant_text button_size_medium header__button"
+              >
+                Blog
+              </span>
             </a>
-            <a
-              href="#"
-              class="header__menu__item button button_variant_text button_size_medium"
-            >
-              Play
+            <a href="#" class="header__menu__item">
+              <span
+                class="button button_variant_text button_size_medium header__button"
+              >
+                Play
+              </span>
             </a>
-            <a
-              href="#"
-              class="header__menu__item button button_variant_text button_size_medium"
-            >
-              AI Help
+            <a href="#" class="header__menu__item">
+              <span
+                class="button button_variant_text button_size_medium header__button"
+              >
+                AI Help <sup class="header__sup">BETA</sup>
+              </span>
             </a>
           </div>
 
           <div class="header__menu">
-            <button class="button button_variant_text">
-              <span class="icon icon_variant_theme-os-default"></span> Theme
+            <button class="button button_variant_text button_size_small">
+              <span
+                class="icon icon_size_base icon_variant_theme-os-default"
+              ></span>
+              Theme
             </button>
 
             <div class="input input_variant_search">
-              <div class="input__buttons">
-                <span class="underline"></span>
-                <div class="input__box">
-                  <button class="button button_variant_text button_size_small">
-                    <span class="icon icon_variant_search"></span>
-                  </button>
+              <div class="input__container">
+                <div class="input__buttons">
+                  <span
+                    class="underline input_variant_search__underline"
+                  ></span>
+                  <div class="input__box">
+                    <button
+                      class="button button_variant_text button_size_small"
+                    >
+                      <span
+                        class="icon icon_size_base icon_variant_search"
+                      ></span>
+                    </button>
+                  </div>
                 </div>
+                <input type="search" class="input__input" />
               </div>
-              <input type="search" class="input__input" />
             </div>
 
             <span>Log in</span>
@@ -121,15 +138,213 @@
         </ul>
 
         <button class="button button_variant_text button_size_small">
-          <span class="icon icon_variant_language"></span>
+          <span class="icon icon_size_base icon_variant_language"></span>
           English (US)
         </button>
       </div>
     </nav>
     <main class="main container">
-      <div class="sidebar"></div>
-      
-      <article class="article">
+      <aside class="sidebar sidebar_sticky">
+        <header class="sidebar__header">
+          <div class="input input_variant_search">
+            <div class="input__container">
+              <div class="input__buttons">
+                <div class="input__box">
+                  <button class="button button_variant_text button_size_small">
+                    <span
+                      class="icon icon_size_base icon_variant_filter"
+                    ></span>
+                  </button>
+                </div>
+              </div>
+              <input
+                type="search"
+                placeholder="Filter"
+                class="input__input"
+                style="padding-left: var(--space-xl)"
+              />
+            </div>
+          </div>
+        </header>
+
+        <ol class="sidebar__list">
+          <a href="#" class="sidebar__list__link sidebar__list__title">HTML</a>
+        </ol>
+
+        <ol class="sidebar__list">
+          <a href="#" class="sidebar__list__link sidebar__list__title"
+            >Tutorials</a
+          >
+
+          <li class="sidebar__list__item">
+            <a href="#" class="sidebar__list__link">HTML basics</a>
+          </li>
+
+          <li class="sidebar__list__item">
+            <details class="sidebar__details">
+              <summary class="sidebar__details__summary">
+                Introduction to HTML
+              </summary>
+
+              <ol class="sidebar__details__list">
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >Introduction to HTML overview</a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >Getting started with HTML</a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >What's in the head? Metadata in HTML</a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >HTML text fundamentals</a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >Creating hyperlinks</a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >Advanced text formatting</a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >Document and website structure</a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link">Debugging HTML</a>
+                </li>
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >Assessment: Marking up a letter</a
+                  >
+                </li>
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >Assessment: Structuring a page of content</a
+                  >
+                </li>
+              </ol>
+            </details>
+          </li>
+
+          <li class="sidebar__list__item">
+            <details class="sidebar__details">
+              <summary class="sidebar__details__summary">
+                HTML tables overview
+              </summary>
+
+              <ol class="sidebar__details__list">
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link">HTML table basics</a>
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >HTML table advanced features and accessibility</a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    >Assessment: Structuring planet data</a
+                  >
+                </li>
+              </ol>
+            </details>
+          </li>
+        </ol>
+
+        <ol class="sidebar__list">
+          <a href="#" class="sidebar__list__link sidebar__list__title"
+            >References</a
+          >
+
+          <li class="sidebar__list__item">
+            <details class="sidebar__details">
+              <summary class="sidebar__details__summary">HTML elements</summary>
+
+              <ol class="sidebar__details__list">
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    ><code>&lt;a&gt;</code></a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    ><code>&lt;abbr&gt;</code></a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    ><code>&lt;address&gt;</code></a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    ><code>&lt;area&gt;</code></a
+                  >
+                </li>
+              </ol>
+            </details>
+          </li>
+
+          <li class="sidebar__list__item">
+            <details class="sidebar__details">
+              <summary class="sidebar__details__summary">
+                Global attributes
+              </summary>
+
+              <ol class="sidebar__details__list">
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    ><code>accesskey</code></a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    ><code>autocapitalize</code></a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"
+                    ><code>autofocus</code></a
+                  >
+                </li>
+
+                <li class="sidebar__list__item">
+                  <a href="#" class="sidebar__list__link"><code>class</code></a>
+                </li>
+              </ol>
+            </details>
+          </li>
+        </ol>
+      </aside>
+
+      <article class="article article_sticky">
         <div class="article__container">
           <div class="article__header">
             <h1 class="article__title">HTML: HyperText Markup Language</h1>
@@ -159,92 +374,95 @@
                 for display in a Web browser. HTML markup includes special
                 "elements" such as
                 <a href="#en-US/docs/Web/HTML/Element/head"
-                  ><code>&lt;head&gt;</code></a
+                  ><code class="code">&lt;head&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/title"
-                  ><code>&lt;title&gt;</code></a
+                  ><code class="code">&lt;title&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/body"
-                  ><code>&lt;body&gt;</code></a
+                  ><code class="code">&lt;body&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/header"
-                  ><code>&lt;header&gt;</code></a
+                  ><code class="code">&lt;header&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/footer"
-                  ><code>&lt;footer&gt;</code></a
+                  ><code class="code">&lt;footer&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/article"
-                  ><code>&lt;article&gt;</code></a
+                  ><code class="code">&lt;article&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/section"
-                  ><code>&lt;section&gt;</code></a
+                  ><code class="code">&lt;section&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/p"
-                  ><code>&lt;p&gt;</code></a
+                  ><code class="code">&lt;p&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/div"
-                  ><code>&lt;div&gt;</code></a
+                  ><code class="code">&lt;div&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/span"
-                  ><code>&lt;span&gt;</code></a
+                  ><code class="code">&lt;span&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/img"
-                  ><code>&lt;img&gt;</code></a
+                  ><code class="code">&lt;img&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/aside"
-                  ><code>&lt;aside&gt;</code></a
+                  ><code class="code">&lt;aside&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/audio"
-                  ><code>&lt;audio&gt;</code></a
+                  ><code class="code">&lt;audio&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/canvas"
-                  ><code>&lt;canvas&gt;</code></a
+                  ><code class="code">&lt;canvas&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/datalist"
-                  ><code>&lt;datalist&gt;</code></a
+                  ><code class="code">&lt;datalist&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/details"
-                  ><code>&lt;details&gt;</code></a
+                  ><code class="code">&lt;details&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/embed"
-                  ><code>&lt;embed&gt;</code></a
+                  ><code class="code">&lt;embed&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/nav"
-                  ><code>&lt;nav&gt;</code></a
+                  ><code class="code">&lt;nav&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/search"
-                  ><code>&lt;search&gt;</code></a
+                  ><code class="code">&lt;search&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/output"
-                  ><code>&lt;output&gt;</code></a
+                  ><code class="code">&lt;output&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/progress"
-                  ><code>&lt;progress&gt;</code></a
+                  ><code class="code">&lt;progress&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/video"
-                  ><code>&lt;video&gt;</code></a
+                  ><code class="code">&lt;video&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/ul"
-                  ><code>&lt;ul&gt;</code></a
+                  ><code class="code">&lt;ul&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/ol"
-                  ><code>&lt;ol&gt;</code></a
+                  ><code class="code">&lt;ol&gt;</code></a
                 >,
                 <a href="#en-US/docs/Web/HTML/Element/li"
-                  ><code>&lt;li&gt;</code></a
+                  ><code class="code">&lt;li&gt;</code></a
                 >
                 and many others.
               </p>
               <p>
                 An HTML element is set off from other text in a document by
-                "tags", which consist of the element name surrounded by
-                "<code>&lt;</code>" and "<code>&gt;</code>". The name of an
-                element inside a tag is case-insensitive. That is, it can be
-                written in uppercase, lowercase, or a mixture. For example, the
-                <code>&lt;title&gt;</code> tag can be written as
-                <code>&lt;Title&gt;</code>, <code>&lt;TITLE&gt;</code>, or in
-                any other way. However, the convention and recommended practice
-                is to write tags in lowercase.
+                "tags", which consist of the element name surrounded by "<code
+                  class="code"
+                  >&lt;</code
+                >" and "<code class="code">&gt;</code>". The name of an element
+                inside a tag is case-insensitive. That is, it can be written in
+                uppercase, lowercase, or a mixture. For example, the
+                <code class="code">&lt;title&gt;</code> tag can be written as
+                <code class="code">&lt;Title&gt;</code>,
+                <code class="code">&lt;TITLE&gt;</code>, or in any other way.
+                However, the convention and recommended practice is to write
+                tags in lowercase.
               </p>
               <p>The articles below can help you learn more about HTML.</p>
             </section>
@@ -284,7 +502,9 @@
       </article>
 
       <aside class="toc">
-        <h2 class="toc__heading">In this article</h2>
+        <header>
+          <h2 class="toc__heading">In this article</h2>
+        </header>
         <ul class="toc__list">
           <li class="toc__list__item">
             <a class="toc__link" href="#key_resources">Key resources</a>
