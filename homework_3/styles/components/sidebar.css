@@ -1,0 +1,26 @@
+.sidebar {
+  position: sticky;
+  top: var(--offest);
+
+  height: 100vh;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-xl);
+}
+
+.sidebar__header {
+  padding-top: var(--space-md);
+}
+
+.sidebar__toc {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .sidebar__toc {
+    display: block;
+  }
+}

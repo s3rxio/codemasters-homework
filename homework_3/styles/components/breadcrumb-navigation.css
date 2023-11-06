@@ -1,0 +1,16 @@
+.breadcrumb-navigation {
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb-navigation__container {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
+
+  padding: var(--space-sm);
+  gap: var(--space-lg);
+}

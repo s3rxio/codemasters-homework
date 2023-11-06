@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;500;700&display=swap");
+
+@import url("./components/icon.css");
+@import url("./components/button.css");
+@import url("./components/input.css");
+@import url("./components/breadcrumb.css");
+
+@import url("./components/banner.css");
+@import url("./components/header.css");
+@import url("./components/breadcrumb-navigation.css");
+@import url("./components/sidebar.css");
+@import url("./components/quicklinks.css");
+@import url("./components/article.css");
+@import url("./components/toc.css");
+@import url("./components/main.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-primary: #1b1b1b;
+  --background-secondary: #343434;
+
+  --border-color: #858585;
+  --accent-color: #ff2a5130;
+
+  --text-primary: white;
+  --text-secondary: #cdcdcd;
+  --text-link: #8cb4ff;
+
+  --code-background: var(--background-secondary);
+
+  --font-normal: "Roboto", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+
+  --text-xs: 0.45rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 2rem;
+  --text-xl: 2.375rem;
+
+  --space-xs: 0.125rem;
+  --space-sm: 0.25rem;
+  --space-md: 0.5rem;
+  --space-lg: 1rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+}
+
+html,
+body {
+  height: 100%;
+
+  font-size: 16px;
+  font-weight: var(--font-regular);
+  font-family: var(--font-normal);
+
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--text-link);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  line-height: var(--space-xl);
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+dt {
+  line-height: 1;
+  margin: 0 0 var(--space-md) 0;
+}
+
+dd {
+  margin: 0 0 var(--space-xl) var(--space-lg);
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+}
+
+.underline {
+  display: inline-block;
+  background-color: var(--text-link);
+
+  min-width: 0.45rem;
+  height: 0.125rem;
+}
+
+.code {
+  background-color: var(--code-background);
+  border-radius: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+
+  font-size: 0.75rem;
+}

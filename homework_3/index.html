@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 2</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./styles/base.css" />
+  </head>
+
+  <body>
+    <div class="banner">
+      <p>
+        Get real-time assistance with your coding queries. Try
+        <a href="#">AI Help</a> now!
+      </p>
+    </div>
+    <div class="sticky-container">
+      <header class="header">
+        <div class="container header__container">
+          <div class="header__logo">
+            <svg
+              id="mdn-docs-logo"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0"
+              y="0"
+              viewBox="0 0 694.9 104.4"
+              style="enable-background: new 0 0 694.9 104.4"
+              xml:space="preserve"
+              role="img"
+            >
+              <title>MDN Web Docs</title>
+              <path
+                d="M40.3 0 11.7 92.1H0L28.5 0h11.8zm10.4 0v92.1H40.3V0h10.4zM91 0 62.5 92.1H50.8L79.3 0H91zm10.4 0v92.1H91V0h10.4z"
+                fill="#8cb4ff"
+              ></path>
+              <path d="M627.9 95.6h67v8.8h-67v-8.8z" fill="#8cb4ff"></path>
+              <path
+                d="M367 42h-4l-10.7 30.8h-5.5l-10.8-26h-.4l-10.5 26h-5.2L308.7 42h-3.8v-5.6H323V42h-6.5l6.8 20.4h.4l10.3-26h4.7l11.2 26h.5l5.7-20.3h-6.2v-5.6H367V42zm34.9 20c-.4 3.2-2 5.9-4.7 8.2-2.8 2.3-6.5 3.4-11.3 3.4-5.4 0-9.7-1.6-13.1-4.7-3.3-3.2-5-7.7-5-13.7 0-5.7 1.6-10.3 4.7-14s7.4-5.5 12.9-5.5c5.1 0 9.1 1.6 11.9 4.7s4.3 6.9 4.3 11.3c0 1.5-.2 3-.5 4.7h-25.6c.3 7.7 4 11.6 10.9 11.6 2.9 0 5.1-.7 6.5-2 1.5-1.4 2.5-3 3-4.9l6 .9zM394 51.3c.2-2.4-.4-4.7-1.8-6.9s-3.8-3.3-7-3.3c-3.1 0-5.3 1-6.9 3-1.5 2-2.5 4.4-2.8 7.2H394zm51 2.4c0 5-1.3 9.5-4 13.7s-6.9 6.2-12.7 6.2c-6 0-10.3-2.2-12.7-6.7-.1.4-.2 1.4-.4 2.9s-.3 2.5-.4 2.9h-7.3c.3-1.7.6-3.5.8-5.3.3-1.8.4-3.7.4-5.5V22.3h-6v-5.6H416v27c1.1-2.2 2.7-4.1 4.7-5.7 2-1.6 4.8-2.4 8.4-2.4 4.6 0 8.4 1.6 11.4 4.7 3 3.2 4.5 7.6 4.5 13.4zm-7.7.6c0-4.2-1-7.4-3-9.5-2-2.2-4.4-3.3-7.4-3.3-3.4 0-6 1.2-8 3.7-1.9 2.4-2.9 5-3 7.7V57c0 3 1 5.6 3 7.7s4.5 3.1 7.6 3.1c3.6 0 6.3-1.3 8.1-3.9 1.8-2.7 2.7-5.9 2.7-9.6zm69.2 18.5h-13.2v-7.2c-1.2 2.2-2.8 4.1-4.9 5.6-2.1 1.6-4.8 2.4-8.3 2.4-4.8 0-8.7-1.6-11.6-4.9-2.9-3.2-4.3-7.7-4.3-13.3 0-5 1.3-9.6 4-13.7 2.6-4.1 6.9-6.2 12.8-6.2 5.7 0 9.8 2.2 12.3 6.5V22.3h-8.6v-5.6h15.8v50.6h6v5.5zM493.2 56v-4.4c-.1-3-1.2-5.5-3.2-7.3s-4.4-2.8-7.2-2.8c-3.6 0-6.3 1.3-8.2 3.9-1.9 2.6-2.8 5.8-2.8 9.6 0 4.1 1 7.3 3 9.5s4.5 3.3 7.4 3.3c3.2 0 5.8-1.3 7.8-3.8 2.1-2.6 3.1-5.3 3.2-8zm53.1-1.4c0 5.6-1.8 10.2-5.3 13.7s-8.2 5.3-13.9 5.3-10.1-1.7-13.4-5.1c-3.3-3.4-5-7.9-5-13.5 0-5.3 1.6-9.9 4.7-13.7 3.2-3.8 7.9-5.7 14.2-5.7s11 1.9 14.1 5.7c3 3.7 4.6 8.1 4.6 13.3zm-7.7-.2c0-4-1-7.2-3-9.5s-4.8-3.5-8.2-3.5c-3.6 0-6.4 1.2-8.3 3.7s-2.9 5.6-2.9 9.5c0 3.7.9 6.8 2.8 9.4 1.9 2.6 4.6 3.9 8.3 3.9 3.6 0 6.4-1.3 8.4-3.8 1.9-2.6 2.9-5.8 2.9-9.7zm45 5.8c-.4 3.2-1.9 6.3-4.4 9.1-2.5 2.9-6.4 4.3-11.8 4.3-5.2 0-9.4-1.6-12.6-4.8-3.2-3.2-4.8-7.7-4.8-13.7 0-5.5 1.6-10.1 4.7-13.9 3.2-3.8 7.6-5.7 13.2-5.7 2.3 0 4.6.3 6.7.8 2.2.5 4.2 1.5 6.2 2.9l1.5 9.5-5.9.7-1.3-6.1c-2.1-1.2-4.5-1.8-7.2-1.8-3.5 0-6.1 1.2-7.7 3.7-1.7 2.5-2.5 5.7-2.5 9.6 0 4.1.9 7.3 2.7 9.5 1.8 2.3 4.4 3.4 7.8 3.4 5.2 0 8.2-2.9 9.2-8.8l6.2 1.3zm34.7 1.9c0 3.6-1.5 6.5-4.6 8.5s-7 3-11.7 3c-5.7 0-10.6-1.2-14.6-3.6l1.2-8.8 5.7.6-.2 4.7c1.1.5 2.3.9 3.6 1.1s2.6.3 3.9.3c2.4 0 4.5-.4 6.5-1.3 1.9-.9 2.9-2.2 2.9-4.1 0-1.8-.8-3.1-2.3-3.8s-3.5-1.3-5.8-1.7-4.6-.9-6.9-1.4c-2.3-.6-4.2-1.6-5.7-2.9-1.6-1.4-2.3-3.5-2.3-6.3 0-4.1 1.5-6.9 4.6-8.5s6.4-2.4 9.9-2.4c2.6 0 5 .3 7.2.9 2.2.6 4.3 1.4 6.1 2.4l.8 8.8-5.8.7-.8-5.7c-2.3-1-4.7-1.6-7.2-1.6-2.1 0-3.7.4-5.1 1.1-1.3.8-2 2-2 3.8 0 1.7.8 2.9 2.3 3.6 1.5.7 3.4 1.2 5.7 1.6 2.2.4 4.5.8 6.7 1.4 2.2.6 4.1 1.6 5.7 3 1.4 1.6 2.2 3.7 2.2 6.6zM197.6 73.2h-17.1v-5.5h3.8V51.9c0-3.7-.7-6.3-2.1-7.9-1.4-1.6-3.3-2.3-5.7-2.3-3.2 0-5.6 1.1-7.2 3.4s-2.4 4.6-2.5 6.9v15.6h6v5.5h-17.1v-5.5h3.8V51.9c0-3.8-.7-6.4-2.1-7.9-1.4-1.5-3.3-2.3-5.6-2.3-3.2 0-5.5 1.1-7.2 3.3-1.6 2.2-2.4 4.5-2.5 6.9v15.8h6.9v5.5h-20.2v-5.5h6V42.4h-6.1v-5.6h13.4v6.4c1.2-2.1 2.7-3.8 4.7-5.2 2-1.3 4.4-2 7.3-2s5.3.7 7.5 2.1c2.2 1.4 3.7 3.5 4.5 6.4 1.1-2.5 2.7-4.5 4.9-6.1s4.8-2.4 7.9-2.4c3.5 0 6.5 1.1 8.9 3.3s3.7 5.6 3.7 10.2v18.2h6.1v5.5zm42.5 0h-13.2V66c-1.2 2.2-2.8 4.1-4.9 5.6-2.1 1.6-4.8 2.4-8.3 2.4-4.8 0-8.7-1.6-11.6-4.9-2.9-3.2-4.3-7.7-4.3-13.3 0-5 1.3-9.6 4-13.7 2.6-4.1 6.9-6.2 12.8-6.2s9.8 2.2 12.3 6.5V22.7h-8.6v-5.6h15.8v50.6h6v5.5zm-13.3-16.8V52c-.1-3-1.2-5.5-3.2-7.3s-4.4-2.8-7.2-2.8c-3.6 0-6.3 1.3-8.2 3.9-1.9 2.6-2.8 5.8-2.8 9.6 0 4.1 1 7.3 3 9.5s4.5 3.3 7.4 3.3c3.2 0 5.8-1.3 7.8-3.8 2.1-2.6 3.1-5.3 3.2-8zm61.5 16.8H269v-5.5h6V51.9c0-3.7-.7-6.3-2.2-7.9-1.4-1.6-3.4-2.3-5.7-2.3-3.1 0-5.6 1-7.4 3s-2.8 4.4-2.9 7v15.9h6v5.5h-19.3v-5.5h6V42.4h-6.2v-5.6h13.6V43c2.6-4.6 6.8-6.9 12.7-6.9 3.6 0 6.7 1.1 9.2 3.3s3.7 5.6 3.7 10.2v18.2h6v5.4h-.2z"
+                fill="white"
+              ></path>
+            </svg>
+          </div>
+
+          <div class="header__navigation">
+            <div class="header__menu header__links">
+              <a href="#" class="header__menu__item">
+                <span
+                  class="button button_variant_text button_size_medium header__button"
+                >
+                  References
+                </span>
+              </a>
+              <a href="#" class="header__menu__item">
+                <span
+                  class="button button_variant_text button_size_medium header__button"
+                >
+                  Guides
+                </span>
+              </a>
+              <a href="#" class="header__menu__item">
+                <span
+                  class="button button_variant_text button_size_medium header__button"
+                >
+                  Plus
+                </span>
+              </a>
+              <a href="#" class="header__menu__item">
+                <span
+                  class="button button_variant_text button_size_medium header__button"
+                >
+                  Blog
+                </span>
+              </a>
+              <a href="#" class="header__menu__item">
+                <span
+                  class="button button_variant_text button_size_medium header__button"
+                >
+                  Play
+                </span>
+              </a>
+              <a href="#" class="header__menu__item">
+                <span
+                  class="button button_variant_text button_size_medium header__button"
+                >
+                  AI Help <sup class="header__sup">BETA</sup>
+                </span>
+              </a>
+            </div>
+
+            <div class="header__menu header__actions">
+              <div class="theme-switcher">
+                <button class="button button_variant_text button_size_small">
+                  <span
+                    class="icon icon_size_base icon_variant_theme-os-default"
+                  ></span>
+                  Theme
+                </button>
+              </div>
+
+              <div class="header__input-contianer">
+                <div class="input input_variant_search header__input">
+                  <div class="input__container header__input__container">
+                    <div class="input__buttons">
+                      <span
+                        class="underline input_variant_search__underline"
+                      ></span>
+                      <div class="input__box">
+                        <button
+                          class="button button_variant_text button_size_small"
+                        >
+                          <span
+                            class="icon icon_size_base icon_variant_search"
+                          ></span>
+                        </button>
+                      </div>
+                    </div>
+                    <input type="search" class="input__input" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="header__auth">
+                <span>Log in</span>
+                <button class="button button_size_large">
+                  Sign up for free
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="header__burger">
+            <button
+              class="button button_variant_text button_size_medium header__burger__button"
+            >
+              <span class="icon icon_size_base icon_variant_hamburger"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="breadcrumb-navigation">
+        <div class="container breadcrumb-navigation__container">
+          <ul class="breadcrumb">
+            <li class="breadcrumb__item">
+              <a href="#" class="breadcrumb__link">References</a>
+            </li>
+            <li class="breadcrumb__item">
+              <a href="#" class="breadcrumb__link">HTML</a>
+            </li>
+          </ul>
+
+          <button class="button button_variant_text button_size_small">
+            <span class="icon icon_size_base icon_variant_language"></span>
+            English (US)
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <main class="main container">
+      <aside class="sidebar main__sidebar">
+        <header class="sidebar__header">
+          <div class="input input_variant_search">
+            <div class="input__container">
+              <div class="input__buttons">
+                <div class="input__box">
+                  <button class="button button_variant_text button_size_small">
+                    <span
+                      class="icon icon_size_base icon_variant_filter"
+                    ></span>
+                  </button>
+                </div>
+              </div>
+              <input
+                type="search"
+                placeholder="Filter"
+                class="input__input"
+                style="padding-left: var(--space-xl)"
+              />
+            </div>
+          </div>
+        </header>
+
+        <aside class="toc sidebar__toc">
+          <div class="toc__container">
+            <header>
+              <h2 class="toc__heading">In this article</h2>
+            </header>
+            <ul class="toc__list">
+              <li class="toc__list__item">
+                <a class="toc__link" href="#key_resources">Key resources</a>
+              </li>
+              <li class="toc__list__item">
+                <a class="toc__link" href="#beginners_tutorials"
+                  >Beginner's tutorials</a
+                >
+              </li>
+              <li class="toc__list__item">
+                <a class="toc__link" href="#advanced_topics">Advanced topics</a>
+              </li>
+              <li class="toc__list__item">
+                <a class="toc__link" href="#reference">Reference</a>
+              </li>
+              <li class="toc__list__item">
+                <a class="toc__link" href="#related_topics">Related topics</a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="quicklinks sidebar__quicklinks">
+          <ol class="quicklinks__list">
+            <a href="#" class="quicklinks__list__link quicklinks__list__title"
+              >HTML</a
+            >
+          </ol>
+
+          <ol class="quicklinks__list">
+            <a href="#" class="quicklinks__list__link quicklinks__list__title"
+              >Tutorials</a
+            >
+
+            <li class="quicklinks__list__item">
+              <a href="#" class="quicklinks__list__link">HTML basics</a>
+            </li>
+
+            <li class="quicklinks__list__item">
+              <details class="quicklinks__details">
+                <summary class="quicklinks__details__summary">
+                  Introduction to HTML
+                </summary>
+
+                <ol class="quicklinks__details__list">
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Introduction to HTML overview</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Getting started with HTML</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >What's in the head? Metadata in HTML</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >HTML text fundamentals</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Creating hyperlinks</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Advanced text formatting</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Document and website structure</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Debugging HTML</a
+                    >
+                  </li>
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Assessment: Marking up a letter</a
+                    >
+                  </li>
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Assessment: Structuring a page of content</a
+                    >
+                  </li>
+                </ol>
+              </details>
+            </li>
+
+            <li class="quicklinks__list__item">
+              <details class="quicklinks__details">
+                <summary class="quicklinks__details__summary">
+                  HTML tables overview
+                </summary>
+
+                <ol class="quicklinks__details__list">
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >HTML table basics</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >HTML table advanced features and accessibility</a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      >Assessment: Structuring planet data</a
+                    >
+                  </li>
+                </ol>
+              </details>
+            </li>
+          </ol>
+
+          <ol class="quicklinks__list">
+            <a href="#" class="quicklinks__list__link quicklinks__list__title"
+              >References</a
+            >
+
+            <li class="quicklinks__list__item">
+              <details class="quicklinks__details">
+                <summary class="quicklinks__details__summary">
+                  HTML elements
+                </summary>
+
+                <ol class="quicklinks__details__list">
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      ><code>&lt;a&gt;</code></a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      ><code>&lt;abbr&gt;</code></a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      ><code>&lt;address&gt;</code></a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      ><code>&lt;area&gt;</code></a
+                    >
+                  </li>
+                </ol>
+              </details>
+            </li>
+
+            <li class="quicklinks__list__item">
+              <details class="quicklinks__details">
+                <summary class="quicklinks__details__summary">
+                  Global attributes
+                </summary>
+
+                <ol class="quicklinks__details__list">
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      ><code>accesskey</code></a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      ><code>autocapitalize</code></a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      ><code>autofocus</code></a
+                    >
+                  </li>
+
+                  <li class="quicklinks__list__item">
+                    <a href="#" class="quicklinks__list__link"
+                      ><code>class</code></a
+                    >
+                  </li>
+                </ol>
+              </details>
+            </li>
+          </ol>
+        </div>
+      </aside>
+
+      <article class="article main__article">
+        <div class="article__container main__article__container">
+          <div class="article__header">
+            <h1 class="article__title">HTML: HyperText Markup Language</h1>
+          </div>
+
+          <div class="article__content">
+            <section class="article__section">
+              <p>
+                <strong>HTML</strong> (HyperText Markup Language) is the most
+                basic building block of the Web. It defines the meaning and
+                structure of web content. Other technologies besides HTML are
+                generally used to describe a web page's appearance/presentation
+                (<a href="#en-US/docs/Web/CSS">CSS</a>) or
+                functionality/behavior (<a href="#en-US/docs/Web/JavaScript"
+                  >JavaScript</a
+                >).
+              </p>
+              <p>
+                "Hypertext" refers to links that connect web pages to one
+                another, either within a single website or between websites.
+                Links are a fundamental aspect of the Web. By uploading content
+                to the Internet and linking it to pages created by other people,
+                you become an active participant in the World Wide Web.
+              </p>
+              <p>
+                HTML uses "markup" to annotate text, images, and other content
+                for display in a Web browser. HTML markup includes special
+                "elements" such as
+                <a href="#en-US/docs/Web/HTML/Element/head"
+                  ><code class="code">&lt;head&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/title"
+                  ><code class="code">&lt;title&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/body"
+                  ><code class="code">&lt;body&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/header"
+                  ><code class="code">&lt;header&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/footer"
+                  ><code class="code">&lt;footer&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/article"
+                  ><code class="code">&lt;article&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/section"
+                  ><code class="code">&lt;section&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/p"
+                  ><code class="code">&lt;p&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/div"
+                  ><code class="code">&lt;div&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/span"
+                  ><code class="code">&lt;span&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/img"
+                  ><code class="code">&lt;img&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/aside"
+                  ><code class="code">&lt;aside&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/audio"
+                  ><code class="code">&lt;audio&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/canvas"
+                  ><code class="code">&lt;canvas&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/datalist"
+                  ><code class="code">&lt;datalist&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/details"
+                  ><code class="code">&lt;details&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/embed"
+                  ><code class="code">&lt;embed&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/nav"
+                  ><code class="code">&lt;nav&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/search"
+                  ><code class="code">&lt;search&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/output"
+                  ><code class="code">&lt;output&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/progress"
+                  ><code class="code">&lt;progress&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/video"
+                  ><code class="code">&lt;video&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/ul"
+                  ><code class="code">&lt;ul&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/ol"
+                  ><code class="code">&lt;ol&gt;</code></a
+                >,
+                <a href="#en-US/docs/Web/HTML/Element/li"
+                  ><code class="code">&lt;li&gt;</code></a
+                >
+                and many others.
+              </p>
+              <p>
+                An HTML element is set off from other text in a document by
+                "tags", which consist of the element name surrounded by "<code
+                  class="code"
+                  >&lt;</code
+                >" and "<code class="code">&gt;</code>". The name of an element
+                inside a tag is case-insensitive. That is, it can be written in
+                uppercase, lowercase, or a mixture. For example, the
+                <code class="code">&lt;title&gt;</code> tag can be written as
+                <code class="code">&lt;Title&gt;</code>,
+                <code class="code">&lt;TITLE&gt;</code>, or in any other way.
+                However, the convention and recommended practice is to write
+                tags in lowercase.
+              </p>
+              <p>The articles below can help you learn more about HTML.</p>
+            </section>
+
+            <section class="article__section">
+              <h2 class="article__section__title">Key resources</h2>
+
+              <dl>
+                <dt>HTML Introduction</dt>
+                <dd>
+                  If you're new to web development, be sure to read our
+                  <a
+                    href="#en-US/docs/Learn/Getting_started_with_the_web/HTML_basics"
+                    >HTML Basics</a
+                  >
+                  article to learn what HTML is and how to use it.
+                </dd>
+
+                <dt>HTML Tutorials</dt>
+                <dd>
+                  For articles about how to use HTML, as well as tutorials and
+                  complete examples, check out our
+                  <a href="#en-US/docs/Learn/HTML">HTML Learning Area</a>.
+                </dd>
+
+                <dt>HTML Reference</dt>
+                <dd>
+                  In our extensive
+                  <a href="#en-US/docs/Web/HTML/Reference">HTML reference</a>
+                  section, you'll find the details about every element and
+                  attribute in HTML.
+                </dd>
+              </dl>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <aside class="toc main__toc">
+        <div class="toc__container">
+          <header>
+            <h2 class="toc__heading">In this article</h2>
+          </header>
+
+          <ul class="toc__list">
+            <li class="toc__list__item">
+              <a class="toc__link" href="#key_resources">Key resources</a>
+            </li>
+            <li class="toc__list__item">
+              <a class="toc__link" href="#beginners_tutorials"
+                >Beginner's tutorials</a
+              >
+            </li>
+            <li class="toc__list__item">
+              <a class="toc__link" href="#advanced_topics">Advanced topics</a>
+            </li>
+            <li class="toc__list__item">
+              <a class="toc__link" href="#reference">Reference</a>
+            </li>
+            <li class="toc__list__item">
+              <a class="toc__link" href="#related_topics">Related topics</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

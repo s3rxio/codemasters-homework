@@ -1,0 +1,34 @@
+.quicklinks__list__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.quicklinks__list__link:hover {
+  text-decoration: underline;
+}
+
+.quicklinks__list {
+  list-style: none;
+  color: var(--text-secondary);
+
+  margin-top: var(--space-lg);
+}
+
+.quicklinks__list__title {
+  font-weight: var(--font-bold);
+}
+
+.quicklinks__list__item {
+  margin-top: var(--space-lg);
+}
+
+.quicklinks__details__summary {
+  cursor: pointer;
+}
+
+.quicklinks__details__list {
+  list-style: none;
+
+  margin-top: var(--space-lg);
+  padding-left: var(--space-lg);
+}

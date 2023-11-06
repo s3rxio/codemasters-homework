@@ -1,0 +1,13 @@
+.banner {
+  text-align: center;
+  padding: var(--space-md);
+
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    display: none;
+  }
+}

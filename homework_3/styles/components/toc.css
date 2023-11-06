@@ -1,0 +1,34 @@
+.toc__container {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-lg);
+}
+
+.toc__heading {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.toc__list {
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+}
+
+.toc__list__item {
+  padding: var(--space-md) var(--space-lg);
+  border-left: 2px solid var(--border-color);
+
+  color: var(--text-secondary);
+}
+
+.toc__list__item:hover {
+  color: var(--text-link);
+}
+
+.toc__link {
+  text-decoration: none;
+  color: inherit;
+}
