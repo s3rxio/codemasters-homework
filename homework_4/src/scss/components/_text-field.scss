@@ -1,0 +1,86 @@
+@use "../variables/colors" as *;
+@use "../variables/spacing" as *;
+@use "../variables/text" as *;
+
+.text-field {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: $space-xs;
+  font-size: $text-md;
+
+  &__label {
+    position: absolute;
+
+    color: $text-field-placeholder;
+
+    left: $space-md;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: all 0.2s;
+    pointer-events: none;
+  }
+
+  &__field {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    padding: $space-sm $space-md;
+
+    background-color: $text-field-background;
+    border: 0.5px solid $text-field-border;
+    border-radius: 0.5rem;
+
+    transition-property: background-color, border-color;
+    transition-duration: 0.2s;
+    outline: none;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &_error {
+      background-color: $text-field-background-error;
+      border-color: $text-field-border-error;
+    }
+
+    &:focus {
+      background-color: $text-field-background-focus;
+      border-color: $text-field-border-focus;
+    }
+  }
+
+  &__error {
+    font-size: $text-xs;
+    color: $red-normal;
+
+    display: none;
+
+    &_visible {
+      display: block;
+    }
+  }
+
+  &__input[data-required] ~ &__label::after,
+  &__input[required] ~ &__label::after {
+    content: "*";
+  }
+
+  &__input:focus ~ &__label,
+  &__input:not(:placeholder-shown) ~ &__label {
+    color: $text-field-label;
+    font-size: $text-xs;
+
+    left: 0;
+    top: 0;
+
+    transform: translateY(-100%);
+  }
+}

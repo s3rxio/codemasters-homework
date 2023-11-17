@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "yarn sass:build && serve ./src",
+    "sass:build": "sass ./src/scss/main.scss ./src/build/css/main.css",
+    "sass:watch": "sass --watch ./src/scss/main.scss ./src/build/css/main.css"
+  },
+  "dependencies": {
+    "sass": "^1.69.5",
+    "serve": "^14.2.1"
+  }
+}

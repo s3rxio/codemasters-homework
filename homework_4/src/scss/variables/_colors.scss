@@ -1,0 +1,37 @@
+$black: #000000;
+
+$white-normal: #ffffff;
+$white-light: #f5f5f5;
+
+$grey-normal: #586870;
+$grey-light: #c0c6c9;
+
+$blue-normal: #007aff;
+$blue-light: #e4f0ff;
+
+$red-normal: #ff3d00;
+$red-light: #ffefef;
+
+$violet-normal: #9b51e0;
+$violet-gradient: linear-gradient(to bottom, #6e6ce0, #4d4cad);
+
+$background: $white-normal;
+$background-secondary: $white-light;
+
+$color: $black;
+$color-secondary: $grey-normal;
+
+$text-field-label: $grey-normal;
+$text-field-placeholder: $grey-light;
+
+$text-field-background: $white-normal;
+$text-field-border: $grey-light;
+
+$text-field-background-focus: $blue-light;
+$text-field-border-focus: $blue-normal;
+
+$text-field-background-error: $red-light;
+$text-field-border-error: $red-normal;
+
+$button-background: $violet-gradient;
+$button-text: $white-normal;

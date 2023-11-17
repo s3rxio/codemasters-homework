@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 4</title>
+
+    <link rel="stylesheet" href="./build/css/main.css" />
+  </head>
+  <body>
+    <form class="form" id="registration-form" novalidate>
+      <div class="form__container">
+        <h3 class="form__title">Registration</h3>
+
+        <div class="form__fields">
+          <div class="text-field">
+            <div class="text-field__field">
+              <input
+                type="text"
+                name="fullName"
+                id="fullName"
+                class="text-field__input"
+                placeholder
+                data-required="true"
+                data-max-length="150"
+              />
+              <label for="fullName" class="text-field__label">Full Name</label>
+            </div>
+            <div class="text-field__error"></div>
+          </div>
+
+          <div class="text-field">
+            <div class="text-field__field">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="text-field__input"
+                placeholder
+                data-required="true"
+                data-max-length="100"
+              />
+              <label for="email" class="text-field__label">Email</label>
+            </div>
+            <div class="text-field__error"></div>
+          </div>
+
+          <div class="text-field">
+            <div class="text-field__field">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="text-field__input"
+                placeholder
+                data-required="true"
+                data-min-length="8"
+                data-max-length="30"
+              />
+              <label for="password" class="text-field__label">Password</label>
+            </div>
+            <div class="text-field__error"></div>
+          </div>
+
+          <div class="text-field">
+            <div class="text-field__field">
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                class="text-field__input"
+                placeholder
+                data-required="true"
+              />
+              <label for="confirmPassword" class="text-field__label"
+                >Confirm Password</label
+              >
+            </div>
+            <div class="text-field__error"></div>
+          </div>
+
+          <label class="checkbox">
+            <input
+              type="checkbox"
+              name="agree"
+              id="agree"
+              class="checkbox__input"
+              data-required="true"
+            />
+            <div class="checkbox__checkmark"></div>
+            Я подтверждаю что хочу зарегистрироваться
+          </label>
+        </div>
+
+        <button class="button form__button" type="submit">Отправить</button>
+      </div>
+    </form>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

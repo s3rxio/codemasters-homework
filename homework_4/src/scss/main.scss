@@ -1,0 +1,51 @@
+@use "normalize";
+@use "variables/colors" as *;
+@use "variables/spacing" as *;
+@use "variables/font" as *;
+@use "variables/text" as *;
+
+@use "components/button";
+@use "components/text-field";
+@use "components/checkbox";
+@use "components/form";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-family: $font-primary;
+  font-weight: $font-regular;
+  font-size: $text-base;
+
+  background-color: $background;
+  color: $color;
+
+  width: 100%;
+  height: 100%;
+
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-semibold;
+  // margin: 0;
+}

@@ -1,0 +1,56 @@
+@use "../variables/colors" as *;
+@use "../variables/spacing" as *;
+@use "../variables/text" as *;
+
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  gap: $space-sm;
+  font-size: $text-md;
+
+  &__input {
+    position: absolute;
+
+    opacity: 0;
+    appearance: none;
+  }
+
+  &__checkmark {
+    $size: 1rem;
+
+    position: relative;
+    display: inline-block;
+
+    width: $size;
+    height: $size;
+
+    background-color: $text-field-background;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.75rem;
+
+    border: 0.5px solid $text-field-border;
+    border-radius: 0.25rem;
+
+    transition: all 0.1s;
+  }
+
+  &__input:active ~ &__checkmark,
+  &__input:focus ~ &__checkmark {
+    background-color: $text-field-background-focus;
+    border-color: $text-field-border-focus;
+  }
+
+  &__input:checked ~ &__checkmark {
+    background-color: $blue-normal;
+    border-color: $blue-normal;
+
+    background-image: url("../../media/checkmark.svg");
+  }
+}
+
+.checkbox_error > .checkbox__checkmark {
+  background-color: $text-field-background-error;
+  border-color: $text-field-border-error;
+}

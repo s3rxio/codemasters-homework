@@ -1,0 +1,27 @@
+@use "../variables/colors" as *;
+@use "../variables/spacing" as *;
+@use "../variables/font" as *;
+@use "../variables/text" as *;
+
+.button {
+  display: inline-block;
+
+  background-image: $button-background;
+  color: $button-text;
+
+  font-weight: $font-semibold;
+  font-size: $text-md;
+
+  padding: $space-sm $space-md;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
