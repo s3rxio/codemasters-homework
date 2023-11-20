@@ -1,0 +1,27 @@
+{
+  "name": "homework_5",
+  "version": "1.0.0",
+  "author": "s3rxio",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start:prod": "serve build",
+    "start:dev": "webpack serve --mode development"
+  },
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "normalize.scss": "^0.1.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
