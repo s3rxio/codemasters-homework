@@ -8,10 +8,54 @@
   <body>
     <div class="page">
       <div class="page__container">
-        <h1><%= htmlWebpackPlugin.options.title %></h1>
-        <p>Я настроил webpack!</p>
+        <h1 class="title">Simple Quiz</h1>
 
-        <button class="button counter-button" data-count="0">Вы нажали</button>
+        <div class="quiz">
+          <div class="quiz__header">
+            <p class="quiz__question">
+              <span class="quiz__question-number">1.</span>
+              Which of the following is NOT a primitive data type?
+            </p>
+          </div>
+
+          <div class="quiz__content">
+            <div class="quiz__answers">
+              <label for="answer-1" class="quiz__answer">
+                <input
+                  type="radio"
+                  name="answer"
+                  id="answer-1"
+                  class="quiz__answer__input"
+                />
+                <div class="quiz__answer__inner">String</div>
+              </label>
+
+              <label for="answer-2" class="quiz__answer">
+                <input
+                  type="radio"
+                  name="answer"
+                  id="answer-2"
+                  class="quiz__answer__input"
+                />
+                <div class="quiz__answer__inner">Number</div>
+              </label>
+
+              <label for="answer-3" class="quiz__answer">
+                <input
+                  type="radio"
+                  name="answer"
+                  id="answer-3"
+                  class="quiz__answer__input"
+                />
+                <div class="quiz__answer__inner">Boolean</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz__footer">
+            <button class="button">Play Again</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
