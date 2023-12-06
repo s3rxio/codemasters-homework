@@ -6,10 +6,39 @@ const router = jsonServer.router(`${__dirname}/db.json`);
 server.use(jsonServer.defaults());
 server.use(jsonServer.bodyParser);
 
+const excludeAnswers = question =>
+  question.answers.map(a => {
+    const { correct: _, ...rest } = a;
+
+    return { ...rest };
+  });
+
 server.get("/questions/length", (_, res) => {
   const questions = router.db.get("questions").value();
   res.json({
     length: questions.length,
+  });
+});
+
+server.get("/questions", (_, res) => {
+  const questions = router.db.get("questions").value();
+  const serializedQuestions = questions.map(q => ({
+    ...q,
+    answers: excludeAnswers(q),
+  }));
+
+  res.json({
+    ...serializedQuestions,
+  });
+});
+
+server.get("/questions/:id", (req, res) => {
+  const id = +req.params.id;
+  const question = router.db.get("questions").value()[id - 1];
+
+  res.json({
+    ...question,
+    answers: excludeAnswers(question),
   });
 });
 
