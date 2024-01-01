@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: var(--space-md) 0;
+
+  &__text {
+    font-size: var(--text-sm);
+  }
+}

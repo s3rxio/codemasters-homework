@@ -1,0 +1,22 @@
+.app {
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "navbar main"
+    "footer footer";
+
+  &__navbar {
+    grid-area: navbar;
+  }
+
+  &__main {
+    grid-area: main;
+    padding: var(--space-2xl);
+  }
+
+  &__footer {
+    grid-area: footer;
+  }
+}
