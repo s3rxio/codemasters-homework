@@ -185,16 +185,21 @@ export class ChatsService {
   async getMessages(chatId: number, limit = 20, offset = 0) {
     await this.findOneById(chatId);
 
-    const messages = await this.prisma.message.findMany({
-      where: {
-        chatId
-      },
-      take: limit,
-      skip: offset,
-      orderBy: {
-        createdAt: "desc"
-      }
-    });
+    const messages = await this.prisma.message
+      .findMany({
+        where: {
+          chatId
+        },
+        include: { author: true },
+        take: limit,
+        skip: offset,
+        orderBy: {
+          createdAt: "desc"
+        }
+      })
+      .then(messages =>
+        messages.map(m => ({ ...m, author: exclude(m.author, "code") }))
+      );
 
     return {
       total: messages.length,
