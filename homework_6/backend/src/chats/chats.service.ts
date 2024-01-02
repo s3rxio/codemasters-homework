@@ -10,6 +10,7 @@ import { UpdateChatDto } from "./dto/update-chat.dto";
 import { PrismaService } from "@/prisma/prisma.service";
 import { REQUEST } from "@nestjs/core";
 import { Gateway } from "@/gateway/gateway";
+import { exclude } from "@/core/utils/exclude";
 
 @Injectable()
 export class ChatsService {
@@ -98,7 +99,9 @@ export class ChatsService {
         socket => socket.data.id === this.req["user"].id
       );
 
-      socket.join(chatId.toString());
+      if (socket) {
+        socket.join(chatId.toString());
+      }
     });
 
     return this.prisma.chat.update({
@@ -132,7 +135,7 @@ export class ChatsService {
         socket => socket.data.id === this.req["user"].id
       );
 
-      socket.leave(chatId.toString());
+      socket?.leave(chatId.toString());
     });
 
     return await this.prisma.chat.update({
@@ -176,7 +179,7 @@ export class ChatsService {
     });
 
     this.gateway.server.to(chatId.toString()).emit("messageCreate", message);
-    return message;
+    return { ...message, author: exclude(message.author, "code") };
   }
 
   async getMessages(chatId: number, limit = 20, offset = 0) {
