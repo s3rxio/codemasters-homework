@@ -31,9 +31,9 @@ export class UsersService {
   }
 
   async findAll() {
-    const users = (
-      await this.prisma.user.findMany({ include: { chats: true } })
-    ).map(u => exclude(u, "code"));
+    const users = (await this.prisma.user.findMany()).map(u =>
+      exclude(u, "code")
+    );
 
     return users;
   }
@@ -44,11 +44,23 @@ export class UsersService {
       include: { chats: true }
     });
 
+    const userChats = await this.prisma.chat.findMany({
+      where: {
+        members: {
+          some: {
+            memberId: id
+          }
+        }
+      },
+      include: { members: true }
+    });
+
     if (!user) {
       throw new NotFoundException("User not found");
     }
 
-    return exclude(user, "code");
+    const plainUser = exclude(user, "code");
+    return { ...plainUser, chats: userChats };
   }
 
   findOneByUsername(username: string) {
