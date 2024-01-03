@@ -10,7 +10,7 @@ import { UpdateChatDto } from "./dto/update-chat.dto";
 import { PrismaService } from "@/prisma/prisma.service";
 import { REQUEST } from "@nestjs/core";
 import { Gateway } from "@/gateway/gateway";
-import { exclude } from "@/core/utils/exclude";
+import { exclude } from "@/common/utils/exclude";
 
 @Injectable()
 export class ChatsService {

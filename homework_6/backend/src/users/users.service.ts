@@ -6,7 +6,7 @@ import {
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { PrismaService } from "@/prisma/prisma.service";
-import { exclude } from "@/core/utils/exclude";
+import { exclude } from "@/common/utils/exclude";
 
 @Injectable()
 export class UsersService {
