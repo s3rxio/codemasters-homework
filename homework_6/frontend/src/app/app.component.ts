@@ -1,3 +1,4 @@
+import { AuthService } from "@/app/auth/auth.service";
 import { UserService } from "@/app/user/user.service";
 import { Component, OnInit, ViewEncapsulation, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -15,9 +16,14 @@ import { UserModule } from "./user/user.module";
   imports: [CommonModule, RouterOutlet, FooterComponent, UserModule]
 })
 export class AppComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(
+    private authService: AuthService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-    this.userService.setMe();
+    if (this.authService.isAuthenticated()) {
+      this.userService.setMe();
+    }
   }
 }

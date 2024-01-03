@@ -1,0 +1,29 @@
+.text-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-xs);
+
+  &__label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+  }
+
+  &__input {
+    width: 100%;
+    padding: var(--space-xs);
+
+    background-color: var(--zinc-400);
+    color: var(--text-primary);
+
+    border-radius: var(--rounded-md);
+    border: 1px solid var(--zinc-300);
+
+    outline: none;
+  }
+
+  &__error {
+    color: var(--red-300);
+    font-size: var(--text-sm);
+  }
+}

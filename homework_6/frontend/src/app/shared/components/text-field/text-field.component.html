@@ -1,0 +1,26 @@
+<div class="text-field">
+  <label class="text-field__label" for="username">
+    {{ label }}
+  </label>
+
+  <input
+    class="text-field__input"
+    [type]="type"
+    [id]="id"
+    [name]="name"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onChange($event.target?.value)"
+    (blur)="onTouched()"
+  />
+
+  <ng-container *ngIf="errors" [ngSwitch]="errors">
+    <p class="text-field__error" *ngIf="errors['required']">
+      This field is required
+    </p>
+    <p class="text-field__error" *ngIf="errors['isNumber']">
+      This field must be a numeric
+    </p>
+  </ng-container>
+</div>

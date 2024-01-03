@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: var(--space-2xl);
+  gap: var(--space-lg);
+
+  border-radius: var(--rounded-xl);
+  background-color: var(--zinc-500);
+
+  &__error {
+    color: var(--red-300);
+  }
+}

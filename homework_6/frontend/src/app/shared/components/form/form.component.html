@@ -1,0 +1,11 @@
+<form class="form">
+  <ng-content></ng-content>
+
+  <p class="form__error" *ngIf="error">
+    {{ error }}
+  </p>
+
+  <app-button type="submit" [disabled]="btnDisabled">
+    {{ btnText }}
+  </app-button>
+</form>
