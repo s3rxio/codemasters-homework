@@ -17,7 +17,7 @@ export class UsersController {
 
   // @Get()
   // findAll() {
-  //   return this.usersService.findAll();
+  //   return this.usersService.findMany({});
   // }
 
   @Get("me")

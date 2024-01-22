@@ -1,0 +1,13 @@
+<div class="chat-card">
+  {{ chat.name }} ({{ chat.members.length }} members)
+
+  <ng-container *ngIf="chat.ownerId === 1; else joinButton"></ng-container>
+</div>
+
+<ng-template #joinButton>
+  <button (click)="joinChat(chat.id)">Join</button>
+</ng-template>
+
+<ng-template #leaveButton>
+  <button (click)="leaveChat(chat.id)">Leave</button>
+</ng-template>

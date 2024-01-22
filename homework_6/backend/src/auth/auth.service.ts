@@ -12,7 +12,14 @@ export class AuthService {
   ) {}
 
   async login(loginDto: LoginDto) {
-    const user = await this.usersService.findOneByUsername(loginDto.username);
+    const user = await this.usersService.findOne({
+      where: {
+        username: loginDto.username
+      },
+      select: {
+        code: true
+      }
+    });
 
     if (user?.code !== loginDto.code) {
       throw new UnauthorizedException("Username or password is incorrect");

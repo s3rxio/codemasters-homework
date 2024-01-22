@@ -1,0 +1,23 @@
+<app-form
+  [formGroup]="authForm"
+  (ngSubmit)="onSubmit()"
+  [error]="authForm.errors?.['fromServer']"
+  [btnText]="submitLabel"
+  [btnDisabled]="authForm.invalid"
+>
+  <app-text-field
+    formControlName="username"
+    label="Username"
+    id="username"
+    name="username"
+    placeholder="Enter username"
+  />
+
+  <app-text-field
+    formControlName="code"
+    label="Code"
+    id="code"
+    name="code"
+    placeholder="Enter Code"
+  />
+</app-form>

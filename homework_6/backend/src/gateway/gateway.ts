@@ -7,7 +7,6 @@ import {
   WebSocketGateway,
   WebSocketServer
 } from "@nestjs/websockets";
-import { MembersOnChats, User } from "@prisma/client";
 import { Server, Socket } from "socket.io";
 
 @WebSocketGateway({
@@ -24,26 +23,31 @@ export class Gateway {
 
   @SubscribeMessage("identify")
   async handleIdentify(
-    @MessageBody("token") token: string,
+    @MessageBody() data: { token: string },
     @ConnectedSocket() client: Socket
   ) {
+    const { token } = data;
+
+    if (!token) {
+      return { ok: false, message: "No token provided" };
+    }
+
     const payload: { id: number } | null = await this.jwtService
       .verifyAsync(token)
       .catch(() => null);
-
     if (!payload) {
       return { ok: false, message: "Bad token" };
     }
 
-    const user: (User & { chats: MembersOnChats[] }) | null =
-      await this.usersService.findOneById(payload.id).catch(() => null);
+    const user = await this.usersService.findOneById(payload.id, {
+      chats: true
+    });
     if (!user) {
       return { ok: false, message: "User not found" };
     }
 
     client.data = { ...user };
-
-    const chatIds = user.chats.map(c => c.chatId.toString());
+    const chatIds = user.chats.map(c => c.id.toString());
     await client.join(chatIds);
 
     return { ok: true, data: { user, rooms: chatIds } };

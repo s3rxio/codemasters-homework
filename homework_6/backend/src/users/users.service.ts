@@ -6,10 +6,19 @@ import {
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { PrismaService } from "@/prisma/prisma.service";
-import { exclude } from "@/common/utils/exclude";
+import { Prisma } from "@prisma/client";
 
 @Injectable()
 export class UsersService {
+  private readonly defaultSelect: Prisma.UserSelect = {
+    id: true,
+    username: true,
+    avatarUrl: true,
+    code: false,
+    updatedAt: true,
+    createdAt: true
+  };
+
   constructor(private prisma: PrismaService) {}
 
   async create(createUserDto: CreateUserDto) {
@@ -26,22 +35,43 @@ export class UsersService {
     return this.prisma.user.create({
       data: {
         ...createUserDto
-      }
+      },
+      select: this.defaultSelect
     });
   }
 
-  async findAll() {
-    const users = (await this.prisma.user.findMany()).map(u =>
-      exclude(u, "code")
-    );
+  async findMany({ where, select }: Omit<Prisma.UserFindManyArgs, "include">) {
+    const users = await this.prisma.user.findMany({
+      where,
+      select: {
+        ...this.defaultSelect,
+        _count: true,
+        ...select
+      }
+    });
 
     return users;
   }
 
-  async findOneById(id: number) {
+  async findOne({ where, select }: Omit<Prisma.UserFindUniqueArgs, "include">) {
     const user = await this.prisma.user.findUnique({
+      where,
+      select: {
+        ...this.defaultSelect,
+        ...select
+      }
+    });
+
+    if (!user) {
+      throw new NotFoundException("User not found");
+    }
+    return user;
+  }
+
+  async findOneById(id: number, select?: Prisma.UserFindUniqueArgs["select"]) {
+    const user = await this.findOne({
       where: { id },
-      include: { chats: true }
+      ...select
     });
 
     const userChats = await this.prisma.chat.findMany({
@@ -55,32 +85,31 @@ export class UsersService {
       include: { members: true }
     });
 
-    if (!user) {
-      throw new NotFoundException("User not found");
-    }
-
-    const plainUser = exclude(user, "code");
-    return { ...plainUser, chats: userChats };
-  }
-
-  findOneByUsername(username: string) {
-    return this.prisma.user.findUnique({ where: { username } });
+    return { ...user, chats: userChats };
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
-    this.findOneById(id);
+    await this.findOneById(id);
 
     const user = await this.prisma.user.update({
       where: { id },
+      select: this.defaultSelect,
       data: updateUserDto
     });
 
-    return exclude(user, "code");
+    return user;
   }
 
   async remove(id: number) {
     await this.findOneById(id);
+    await this.prisma.user.delete({
+      where: { id },
+      select: this.defaultSelect
+    });
 
-    return this.prisma.user.delete({ where: { id } });
+    return {
+      ok: true,
+      message: "User deleted"
+    };
   }
 }

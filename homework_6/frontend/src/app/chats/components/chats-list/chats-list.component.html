@@ -1,0 +1,9 @@
+<div class="chats-list" *ngIf="chats!.length > 0; else noChats">
+  <ng-container *ngFor="let chat of chats">
+    <app-chat-card [chat]="chat"></app-chat-card>
+  </ng-container>
+</div>
+
+<ng-template #noChats>
+  <p>No chats found</p>
+</ng-template>

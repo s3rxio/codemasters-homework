@@ -10,10 +10,24 @@ import { UpdateChatDto } from "./dto/update-chat.dto";
 import { PrismaService } from "@/prisma/prisma.service";
 import { REQUEST } from "@nestjs/core";
 import { Gateway } from "@/gateway/gateway";
-import { exclude } from "@/common/utils/exclude";
+import { Prisma } from "@prisma/client";
 
 @Injectable()
 export class ChatsService {
+  private readonly defaultMessageSelect: Prisma.MessageSelect = {
+    id: true,
+    content: true,
+    author: {
+      select: {
+        id: true,
+        username: true,
+        avatarUrl: true
+      }
+    },
+    authorId: true,
+    chatId: true
+  };
+
   constructor(
     private prisma: PrismaService,
     @Inject(REQUEST) private req: Request,
@@ -44,14 +58,23 @@ export class ChatsService {
     });
   }
 
-  findAll() {
-    return this.prisma.chat.findMany({ include: { members: true } });
+  findMany(args?: Prisma.ChatFindManyArgs) {
+    return this.prisma.chat.findMany({
+      ...args,
+      select: {
+        _count: true,
+        ...args.select
+      }
+    });
   }
 
-  async findOneById(id: number) {
+  async findOneById(
+    id: number,
+    args?: Omit<Prisma.ChatFindUniqueArgs, "where">
+  ) {
     const chat = await this.prisma.chat.findUnique({
       where: { id },
-      include: { members: true }
+      ...args
     });
 
     if (!chat) {
@@ -87,7 +110,11 @@ export class ChatsService {
   }
 
   async joinMember(chatId: number) {
-    const chat = await this.findOneById(chatId);
+    const chat = await this.findOneById(chatId, {
+      include: {
+        members: true
+      }
+    });
 
     const isExist = chat.members.some(m => m.memberId === this.req["user"].id);
     if (isExist) {
@@ -118,7 +145,11 @@ export class ChatsService {
   }
 
   async leaveMember(chatId: number) {
-    const chat = await this.findOneById(chatId);
+    const chat = await this.findOneById(chatId, {
+      include: {
+        members: true
+      }
+    });
 
     const isOwner = chat.ownerId === this.req["user"].id;
     if (isOwner) {
@@ -175,31 +206,27 @@ export class ChatsService {
         chatId,
         authorId: this.req["user"].id
       },
-      include: { author: true }
+      select: this.defaultMessageSelect
     });
 
     this.gateway.server.to(chatId.toString()).emit("messageCreate", message);
-    return { ...message, author: exclude(message.author, "code") };
+    return message;
   }
 
   async getMessages(chatId: number, limit = 20, offset = 0) {
     await this.findOneById(chatId);
 
-    const messages = await this.prisma.message
-      .findMany({
-        where: {
-          chatId
-        },
-        include: { author: true },
-        take: limit,
-        skip: offset,
-        orderBy: {
-          createdAt: "desc"
-        }
-      })
-      .then(messages =>
-        messages.map(m => ({ ...m, author: exclude(m.author, "code") }))
-      );
+    const messages = await this.prisma.message.findMany({
+      where: {
+        chatId
+      },
+      select: this.defaultMessageSelect,
+      take: limit,
+      skip: offset,
+      orderBy: {
+        createdAt: "desc"
+      }
+    });
 
     return {
       total: messages.length,

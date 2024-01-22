@@ -23,12 +23,16 @@ export class ChatsController {
 
   @Get()
   findAll() {
-    return this.chatsService.findAll();
+    return this.chatsService.findMany();
   }
 
   @Get(":id")
   findOne(@Param("id") id: string) {
-    return this.chatsService.findOneById(+id);
+    return this.chatsService.findOneById(+id, {
+      include: {
+        members: true
+      }
+    });
   }
 
   @Patch(":id")
